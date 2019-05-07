@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>BlogPlatform</title>
+        <style>
+            .error {
+                color: red;
+            }
+        </style>
+         <nav>
+             
+            <a href='/blog'>Main Blog Page</a> 
+            <a href='/newpost'>Add a Blog Entry</a>
+        </nav>
+    </head>
+<body>
+    <h1><strong>{{description}}</strong></h1>
+
+    
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category,message in messages %}
+                <div class="{{category}}"> {{message}}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
