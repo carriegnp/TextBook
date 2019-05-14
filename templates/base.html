@@ -1,23 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>BlogPlatform</title>
-        <style>
-            .error {
-                color: red;
-            }
-        </style>
-         <nav>
-             
-            <a href='/blog'>Main Blog Page</a> 
-            <a href='/newpost'>Add a Blog Entry</a>
-        </nav>
-    </head>
-<body>
-    <h1><strong>{{description}}</strong></h1>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     
+    <title>Blogz</title>
+    <style>
+         .error {
+            color: red;
+         }
 
+        .topnav-right{
+            float: right;
+            display:block;
+            text-align: center;
+               
+            width: 50%;
+           font-size: 20px;
+         }
+
+        .topnav-left{
+              
+            display: block;
+            
+             
+            font-size: 20px;
+        }
+
+
+    </style>
+     <nav>
+         <div class='topnav-left'>
+             <a href='/'> home </a>
+             <a href='/blog'> all posts </a> 
+             <a href='/login'> new post </a>
+        </div>
+        <div class='topnav-right'>
+        <a href='/login'> login </a>
+        <a href='/logout'> logout </a>
+        </div>
+    </nav>
+</head>
+<body>
+   
     {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
             {% for category,message in messages %}
