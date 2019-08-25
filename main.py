@@ -58,7 +58,7 @@ def login():
             flash('user does not exist', 'error')     
     return render_template('login.html')
 
-
+#nothing changed from original
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
     if request.method == 'POST':
